@@ -1,10 +1,10 @@
-import { type Nullable, notNullish } from '../common'
 import { sum } from '../array'
+import { type Nullable, notNullish } from '../common'
 import type { AnyObject, FilterPredicate, PickByType } from './types'
 
 export const isObject = (value: unknown): value is AnyObject => {
-    if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-        return true
+    if (typeof value !== 'object' || value === null || Array.isArray(value)) {
+        return false
     }
 
     return !(value instanceof Date || value instanceof RegExp || value instanceof Error)
