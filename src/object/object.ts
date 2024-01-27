@@ -2,13 +2,7 @@ import { sum } from '../array'
 import { type Nullable, notNullish, toString } from '../common'
 import type { AnyObject, FilterPredicate, GetValue, Paths, PickByType, SetValueByPath } from './types'
 
-export const isObject = (value: unknown): value is AnyObject => {
-    if (typeof value !== 'object' || value === null || Array.isArray(value)) {
-        return false
-    }
-
-    return !(value instanceof Date || value instanceof RegExp || value instanceof Error)
-}
+export const isObject = (value: unknown): value is AnyObject => typeof value === 'object' && value !== null && !Array.isArray(value)
 
 export const isPlainObject = (value: unknown): value is AnyObject => toString(value) === '[object Object]'
 
