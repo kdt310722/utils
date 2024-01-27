@@ -1,6 +1,6 @@
 import { sum } from '../array'
 import { type Nullable, notNullish, toString } from '../common'
-import type { AnyObject, FilterPredicate, PickByType, SetValueByPath } from './types'
+import type { AnyObject, FilterPredicate, GetValue, Paths, PickByType, SetValueByPath } from './types'
 
 export const isObject = (value: unknown): value is AnyObject => {
     if (typeof value !== 'object' || value === null || Array.isArray(value)) {
@@ -56,6 +56,10 @@ export function map<K extends PropertyKey, V, NK extends PropertyKey, NV>(obj: R
 
 export function sumBy<O extends AnyObject>(objects: O[], key: keyof PickByType<O, number>) {
     return sum(objects.map((o) => o[key]))
+}
+
+export function get<O extends AnyObject, P extends Paths<O, D>, D extends string = '.'>(obj: O, path: P, delimiter: D = '.' as D) {
+    return path.split(delimiter).reduce((acc, key) => acc?.[key], obj) as GetValue<O, P, D>
 }
 
 export function set<O extends AnyObject, P extends string, V, D extends string = '.'>(target: O, path: P, value: V, delimiter: D = '.' as D): SetValueByPath<O, P, V, D> {
