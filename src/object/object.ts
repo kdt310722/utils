@@ -1,5 +1,5 @@
 import { sum } from '../array'
-import { type Nullable, notNullish } from '../common'
+import { type Nullable, notNullish, toString } from '../common'
 import type { AnyObject, FilterPredicate, PickByType } from './types'
 
 export const isObject = (value: unknown): value is AnyObject => {
@@ -9,6 +9,8 @@ export const isObject = (value: unknown): value is AnyObject => {
 
     return !(value instanceof Date || value instanceof RegExp || value instanceof Error)
 }
+
+export const isPlainObject = (value: unknown): value is AnyObject => toString(value) === '[object Object]'
 
 export const isEmptyObject = (value: AnyObject) => Object.keys(value).length === 0
 
