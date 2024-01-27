@@ -1,6 +1,6 @@
 import { sum } from '../array'
 import { type Nullable, notNullish, toString } from '../common'
-import type { AnyObject, FilterPredicate, PickByType } from './types'
+import type { AnyObject, FilterPredicate, PickByType, SetValueByPath } from './types'
 
 export const isObject = (value: unknown): value is AnyObject => {
     if (typeof value !== 'object' || value === null || Array.isArray(value)) {
@@ -56,4 +56,23 @@ export function map<K extends PropertyKey, V, NK extends PropertyKey, NV>(obj: R
 
 export function sumBy<O extends AnyObject>(objects: O[], key: keyof PickByType<O, number>) {
     return sum(objects.map((o) => o[key]))
+}
+
+export function set<O extends AnyObject, P extends string, V, D extends string = '.'>(target: O, path: P, value: V, delimiter: D = '.' as D): SetValueByPath<O, P, V, D> {
+    const keys = path.split(delimiter)
+    const firstKey = keys.shift()
+
+    if (!firstKey) {
+        return target as SetValueByPath<O, P, V, D>
+    }
+
+    if (keys.length === 0) {
+        return Object.assign(target, { [path]: value }) as SetValueByPath<O, P, V, D>
+    }
+
+    if (!isKeyOf(target, firstKey) || !isObject(target[firstKey])) {
+        target = Object.assign(target, { [firstKey]: {} })
+    }
+
+    return Object.assign(target, { [firstKey]: set(target[firstKey], keys.join(delimiter), value, delimiter) }) as SetValueByPath<O, P, V, D>
 }
