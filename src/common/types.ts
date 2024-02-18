@@ -21,3 +21,7 @@ export type ExcludeUndefined<O> = {
 }
 
 export type ExcludeNullish<O> = ExcludeNull<ExcludeUndefined<O>>
+
+export type Mutable<T> = {
+    -readonly [P in keyof T]: T[P];
+}
