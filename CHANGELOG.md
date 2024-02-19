@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.5
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- **common:** Add Mutable type ([2733ff7](https://github.com/kdt310722/utils/commit/2733ff7))
+- **function:** Add tryCatch util ([2fcb862](https://github.com/kdt310722/utils/commit/2fcb862))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.3...v0.0.4)
