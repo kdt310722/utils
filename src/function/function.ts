@@ -18,3 +18,11 @@ export function tap<T>(value: T, callback: (value: T) => void) {
 
     return value
 }
+
+export function tryCatch<T>(fn: () => T, fallback: T) {
+    try {
+        return fn()
+    } catch {
+        return fallback
+    }
+}
