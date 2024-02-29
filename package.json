@@ -52,8 +52,8 @@
         "serialize-error": "^11.0.3"
     },
     "devDependencies": {
-        "@commitlint/cli": "^18.6.1",
-        "@commitlint/config-conventional": "^18.6.2",
+        "@commitlint/cli": "^19.0.3",
+        "@commitlint/config-conventional": "^19.0.3",
         "@kdt310722/eslint-config": "^0.0.5",
         "@kdt310722/tsconfig": "^1.0.0",
         "@swc/core": "^1.4.2",
