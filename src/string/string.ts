@@ -59,3 +59,7 @@ export function random(length = 16, characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcd
 export function shorten(str: string, size: number) {
     return str.length > size * 2 ? `${str.slice(0, size)}...${str.slice(-size)}` : str
 }
+
+export function truncate(str: string, size: number, omission = '...') {
+    return str.length > size ? str.slice(0, size) + omission : str
+}
