@@ -55,3 +55,7 @@ export function random(length = 16, characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcd
 
     return result
 }
+
+export function shorten(str: string, size: number) {
+    return str.length > size * 2 ? `${str.slice(0, size)}...${str.slice(-size)}` : str
+}
