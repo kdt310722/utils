@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.6
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- **string:** Add shorten util ([f7529b8](https://github.com/kdt310722/utils/commit/f7529b8))
+- **string:** Add truncate util ([88a3d3b](https://github.com/kdt310722/utils/commit/88a3d3b))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.4...v0.0.5)
