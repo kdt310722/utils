@@ -58,7 +58,7 @@
         "@kdt310722/eslint-config": "^0.0.5",
         "@kdt310722/tsconfig": "^1.0.0",
         "@swc/core": "^1.5.24",
-        "@types/node": "^20.12.13",
+        "@types/node": "^20.13.0",
         "@vitest/coverage-v8": "^1.6.0",
         "changelogen": "^0.5.5",
         "eslint": "^8.57.0",
