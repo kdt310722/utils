@@ -2,7 +2,7 @@
     "name": "@kdt310722/utils",
     "type": "module",
     "version": "0.0.6",
-    "packageManager": "pnpm@9.9.0",
+    "packageManager": "pnpm@9.10.0",
     "description": "A collection of utility functions for JavaScript / TypeScript application",
     "author": "Diep Dang <kdt310722@gmail.com>",
     "license": "MIT",
@@ -71,7 +71,7 @@
         "simple-git-hooks": "^2.11.1",
         "tsup": "^8.2.4",
         "tsx": "^4.19.0",
-        "typescript": "^5.5.4",
+        "typescript": "^5.6.2",
         "vitest": "^2.0.5"
     },
     "commitlint": {
