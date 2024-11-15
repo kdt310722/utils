@@ -2,7 +2,7 @@
     "name": "@kdt310722/utils",
     "type": "module",
     "version": "0.0.6",
-    "packageManager": "pnpm@9.13.1",
+    "packageManager": "pnpm@9.13.2",
     "description": "A collection of utility functions for JavaScript / TypeScript application",
     "author": "Diep Dang <kdt310722@gmail.com>",
     "license": "MIT",
@@ -49,7 +49,7 @@
     },
     "dependencies": {
         "json5": "^2.2.3",
-        "p-retry": "^6.2.0",
+        "p-retry": "^6.2.1",
         "serialize-error": "^11.0.3"
     },
     "devDependencies": {
