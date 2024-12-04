@@ -1,7 +1,18 @@
 import type { Fn } from '../function'
+import { isObject } from '../object'
 import { sleep } from './sleep'
 
-export const poll = (fn: Fn, delay = 0, immediately = true) => {
+export interface PollOptions {
+    fn: Fn
+    delay?: number
+    immediately?: boolean
+}
+
+export const isPollOptions = (value: any): value is PollOptions => isObject(value) && 'fn' in value
+
+export const poll = (fn: Fn | PollOptions, delay = 0, immediately = true) => {
+    const { fn: _fn, delay: _delay, immediately: _immediately } = isPollOptions(fn) ? { delay, immediately, ...fn } : { fn, delay, immediately }
+
     let active = true
 
     const stop = () => (active = false)
@@ -11,16 +22,16 @@ export const poll = (fn: Fn, delay = 0, immediately = true) => {
             return
         }
 
-        await fn()
+        await _fn()
 
         if (active) {
-            await sleep(delay)
+            await sleep(_delay)
         }
 
         await watch()
     }
 
-    setTimeout(watch, immediately ? 0 : delay)
+    setTimeout(watch, _immediately ? 0 : _delay)
 
     return stop
 }
