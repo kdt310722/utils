@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs'
 import { cp, mkdir } from 'node:fs/promises'
 import path from 'node:path'
-import { sync } from 'fast-glob'
+import fastGlob from 'fast-glob'
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
@@ -12,7 +12,8 @@ export default defineConfig({
     sourcemap: true,
     dts: false,
     async onSuccess() {
-        const files = sync('src/**/*', { onlyFiles: true })
+        // eslint-disable-next-line import/no-named-as-default-member
+        const files = fastGlob.sync('src/**/*', { onlyFiles: true })
 
         for (const file of files) {
             const { dir, base } = path.parse(file)
