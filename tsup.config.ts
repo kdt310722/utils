@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs'
 import { cp, mkdir } from 'node:fs/promises'
-import { join, parse } from 'node:path'
-import fg from 'fast-glob'
+import path from 'node:path'
+import { sync } from 'fast-glob'
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
@@ -12,17 +12,17 @@ export default defineConfig({
     sourcemap: true,
     dts: false,
     async onSuccess() {
-        const files = fg.sync('src/**/*', { onlyFiles: true })
+        const files = sync('src/**/*', { onlyFiles: true })
 
         for (const file of files) {
-            const { dir, base } = parse(file)
-            const outDir = join('dist', dir)
+            const { dir, base } = path.parse(file)
+            const outDir = path.join('dist', dir)
 
             if (dir.length > 0 && !existsSync(dir)) {
                 await mkdir(outDir, { recursive: true })
             }
 
-            await cp(file, join(outDir, base))
+            await cp(file, path.join(outDir, base))
         }
 
         await cp('README.md', 'dist/README.md')

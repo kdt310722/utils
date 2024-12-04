@@ -25,8 +25,8 @@ importers:
         specifier: ^19.6.0
         version: 19.6.0
       '@kdt310722/eslint-config':
-        specifier: ^0.1.0
-        version: 0.1.0(@vue/compiler-sfc@3.4.15)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(tailwindcss@3.4.1)(typescript@5.7.2)
+        specifier: ^0.1.2
+        version: 0.1.2(@vue/compiler-sfc@3.4.15)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(tailwindcss@3.4.1)(typescript@5.7.2)
       '@kdt310722/tsconfig':
         specifier: ^1.0.0
         version: 1.0.0(typescript@5.7.2)
@@ -1260,8 +1260,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@kdt310722/eslint-config@0.1.0':
-    resolution: {integrity: sha512-qYM9caxYUWHpShKSSkagwamm7M2l4p5O8cpbhlwNp4AGkzQeQrrh9CN/NIL1kXZ/FxI8lrCKs4C1SDmwNDHwGQ==}
+  '@kdt310722/eslint-config@0.1.2':
+    resolution: {integrity: sha512-qd208P/h+gEECXHmscQzNQXrJcPKbssGKVH3RBm3+FPK/YKF1wJT4o0z5qEf8wCXUccJZh2bYThoGNBAn8VBOg==}
     peerDependencies:
       eslint: '>=9.16.0'
 
@@ -5424,7 +5424,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@kdt310722/eslint-config@0.1.0(@vue/compiler-sfc@3.4.15)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(tailwindcss@3.4.1)(typescript@5.7.2)':
+  '@kdt310722/eslint-config@0.1.2(@vue/compiler-sfc@3.4.15)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.16.0(jiti@1.21.6)))(eslint@9.16.0(jiti@1.21.6))(tailwindcss@3.4.1)(typescript@5.7.2)':
     dependencies:
       '@antfu/eslint-define-config': 1.23.0-2
       '@antfu/install-pkg': 0.5.0

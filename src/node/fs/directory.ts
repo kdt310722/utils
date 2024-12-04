@@ -1,5 +1,5 @@
 import { type MakeDirectoryOptions, type PathLike, existsSync, lstatSync, mkdirSync } from 'node:fs'
-import { dirname } from 'node:path'
+import nodePath from 'node:path'
 import { toString } from '../path'
 import { isFile } from './file'
 import { isWritable } from './fs'
@@ -20,7 +20,7 @@ export function isWritableDirectory(path: PathLike, recursive = true, falseIfNot
     }
 
     if (recursive && !exists) {
-        return isWritableDirectory(dirname(toString(path)))
+        return isWritableDirectory(nodePath.dirname(toString(path)))
     }
 
     return isWritable(path)

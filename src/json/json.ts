@@ -1,8 +1,8 @@
-import JSON5 from 'json5'
+import { parse, stringify } from 'json5'
 import { toArray } from '../array'
-import type { JsonDeserializer, StringifyJsonOptions } from './types'
-import { bigIntSerializer, errorSerializer } from './serializers'
 import { bigintDeserializer, errorDeserializer } from './deserializers'
+import { bigIntSerializer, errorSerializer } from './serializers'
+import type { JsonDeserializer, StringifyJsonOptions } from './types'
 
 export function parseJson<T = any>(json: string, deserializers?: JsonDeserializer | JsonDeserializer[]): T {
     const revivers = toArray(deserializers ?? [
@@ -10,7 +10,7 @@ export function parseJson<T = any>(json: string, deserializers?: JsonDeserialize
         errorDeserializer,
     ])
 
-    return JSON5.parse(json, (key, value) => revivers.reduce((v, deserializer) => deserializer(key, v), value))
+    return parse(json, (key, value) => revivers.reduce((v, deserializer) => deserializer(key, v), value))
 }
 
 export function stringifyJson<T = any>(value: T, options: StringifyJsonOptions = {}) {
@@ -18,5 +18,5 @@ export function stringifyJson<T = any>(value: T, options: StringifyJsonOptions =
     const serializers = toArray(options.serializers ?? [bigIntSerializer, errorSerializer])
     const replacer = (key: string, value: any) => serializers.reduce((v, serializer) => serializer(key, v), value)
 
-    return json5 ? JSON5.stringify(value, replacer, indent) : JSON.stringify(value, replacer, indent)
+    return json5 ? stringify(value, replacer, indent) : JSON.stringify(value, replacer, indent)
 }

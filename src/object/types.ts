@@ -12,11 +12,11 @@ export type FlattenKeys<T, D extends string = '.'> = T extends AnyObject ? { [K 
 
 export type GetValue<T, P, D extends string = '.'> = P extends `${infer U}${D}${infer R}` ? (U extends keyof T ? GetValue<T[U], R, D> : never) : (P extends keyof T ? T[P] : never)
 
-export type FromPath<P extends string, V, D extends string = '.'> = P extends `${infer U}${D}${infer R}` ? { [K in U]: FromPath<R, V, D> } : { [K in P]: V }
+export type FromPath<P extends string, V, D extends string = '.'> = P extends `${infer U}${D}${infer R}` ? { [K in U]: FromPath<R, V, D> } : Record<P, V>
 
-export type SetValue<O extends AnyObject, P extends string, V> = P extends keyof O ? { [K in keyof O]: K extends P ? V : O[K] } : (O & { [K in P]: V })
+export type SetValue<O extends AnyObject, P extends string, V> = P extends keyof O ? { [K in keyof O]: K extends P ? V : O[K] } : (O & Record<P, V>)
 
-export type SetValueByPath<O extends AnyObject, P extends string, V, D extends string = '.'> = P extends `${infer U}${D}${infer R}` ? U extends keyof O ? { [K in keyof O]: K extends U ? O[K] extends AnyObject ? SetValueByPath<O[K], R, V, D> : FromPath<R, V, D> : O[K] } : (O & { [K in U]: FromPath<R, V, D> }) : SetValue<O, P, V>
+export type SetValueByPath<O extends AnyObject, P extends string, V, D extends string = '.'> = P extends `${infer U}${D}${infer R}` ? U extends keyof O ? { [K in keyof O]: K extends U ? O[K] extends AnyObject ? SetValueByPath<O[K], R, V, D> : FromPath<R, V, D> : O[K] } : (O & Record<U, FromPath<R, V, D>>) : SetValue<O, P, V>
 
 export type Flatten<O extends AnyObject, D extends string = '.'> = {
     [P in FlattenKeys<O, D>]: GetValue<O, P, D>

@@ -14,7 +14,7 @@ export function withTimeout<T>(promise: Promise<T>, ms: number, message?: Error 
             reject(new Error(message ?? `Promise timed out after ${ms} ms`))
         }, ms)
 
-        promise.then(resolve).finally(() => clearTimeout(timeoutId)).catch((error) => {
+        promise.then(resolve).finally(() => clearTimeout(timeoutId)).catch((error: unknown) => {
             clearTimeout(timeoutId)
             reject(error as Error)
         })
