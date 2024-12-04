@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.8
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.7...v0.0.8)
+
+### 🩹 Fixes
+
+- Build ([5ba9a89](https://github.com/kdt310722/utils/commit/5ba9a89))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.7
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.6...v0.0.7)
