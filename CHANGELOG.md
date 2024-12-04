@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.7
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- **promise/timeout:** Clear timer when promise throw an error before timeout reached ([9eed2ce](https://github.com/kdt310722/utils/commit/9eed2ce))
+- **promise/timeout:** Support add custom timeout error using function ([371dadb](https://github.com/kdt310722/utils/commit/371dadb))
+- Style ([30d1371](https://github.com/kdt310722/utils/commit/30d1371))
+
+### 🏡 Chore
+
+- Update dependencies ([3e5659c](https://github.com/kdt310722/utils/commit/3e5659c))
+- Update deps ([0632421](https://github.com/kdt310722/utils/commit/0632421))
+
+### 🎨 Styles
+
+- **promise/poll:** Poll options ([188c00d](https://github.com/kdt310722/utils/commit/188c00d))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.5...v0.0.6)
