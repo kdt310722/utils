@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.10
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.9...v0.0.10)
+
+### 🚀 Enhancements
+
+- **array:** Lru set ([7389e3b](https://github.com/kdt310722/utils/commit/7389e3b))
+- **object:** Lru map ([33f4303](https://github.com/kdt310722/utils/commit/33f4303))
+
+### 🩹 Fixes
+
+- **promise:** Deferred promise ([1b54758](https://github.com/kdt310722/utils/commit/1b54758))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.9
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.8...v0.0.9)
