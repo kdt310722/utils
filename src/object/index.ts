@@ -1,4 +1,5 @@
 export * from './flat'
+export * from './lru-map'
 export * from './object'
 export * from './options'
 export type * from './types'
