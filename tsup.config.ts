@@ -12,7 +12,6 @@ export default defineConfig({
     sourcemap: true,
     dts: false,
     async onSuccess() {
-        // eslint-disable-next-line import/no-named-as-default-member
         const files = fastGlob.sync('src/**/*', { onlyFiles: true })
 
         for (const file of files) {
