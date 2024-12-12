@@ -8,13 +8,17 @@ export function createDeferred<T>() {
         rejectFn = reject
     })
 
-    promise.resolve = resolveFn
-    promise.reject = rejectFn
     promise.isSettled = false
 
-    promise.finally(() => {
+    promise.resolve = (value) => {
+        resolveFn(value)
         promise.isSettled = true
-    })
+    }
+
+    promise.reject = (reason) => {
+        rejectFn(reason)
+        promise.isSettled = true
+    }
 
     return promise
 }
