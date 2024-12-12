@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.11
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.10...v0.0.11)
+
+### 🏡 Chore
+
+- Update ([c4edbb2](https://github.com/kdt310722/utils/commit/c4edbb2))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.10
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.9...v0.0.10)
