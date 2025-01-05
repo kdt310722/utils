@@ -31,3 +31,7 @@ export function format(number: Numberish, options: FormatOptions = {}) {
 
     return formatter.format(number as number)
 }
+
+export function humanizeNumber(value: Numberish, options: FormatOptions = {}) {
+    return format(value, { locales: ['en-US'], notation: 'compact', compactDisplay: 'short', minimumFractionDigits: 2, maximumFractionDigits: 2, ...options })
+}
