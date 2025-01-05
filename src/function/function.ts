@@ -1,4 +1,5 @@
 import type { Nullable } from '../common'
+import type { Awaitable } from '../promise'
 import type { Fn } from './types'
 
 export const isFunction = <T extends Fn>(value: unknown): value is T => typeof value === 'function'
@@ -26,6 +27,18 @@ export function transform<T, R>(value: T, callback: (value: T) => R) {
 export function tryCatch<T>(fn: () => T, fallback: T, throwsIf?: (error: unknown) => boolean) {
     try {
         return fn()
+    } catch (error) {
+        if (throwsIf?.(error)) {
+            throw error
+        }
+
+        return fallback
+    }
+}
+
+export async function tryCatchAsync<T>(fn: () => Promise<T>, fallback: Awaitable<T>, throwsIf?: (error: unknown) => boolean) {
+    try {
+        return await fn()
     } catch (error) {
         if (throwsIf?.(error)) {
             throw error
