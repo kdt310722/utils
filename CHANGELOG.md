@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.13
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.12...v0.0.13)
+
+### 🚀 Enhancements
+
+- Add some helpers to interact with async iterators ([a32bce2](https://github.com/kdt310722/utils/commit/a32bce2))
+- Add once for event emitter ([c81b171](https://github.com/kdt310722/utils/commit/c81b171))
+- Add option to throw instead of return fallback on tryCatch function ([8259bcc](https://github.com/kdt310722/utils/commit/8259bcc))
+- Add transform helper ([5a15b83](https://github.com/kdt310722/utils/commit/5a15b83))
+- Add bigint math ([31cab78](https://github.com/kdt310722/utils/commit/31cab78))
+- Wait until next second ([b60e2a1](https://github.com/kdt310722/utils/commit/b60e2a1))
+- Add tryCatchAsync ([f8f8fa4](https://github.com/kdt310722/utils/commit/f8f8fa4))
+- Add humanizeNumber ([2e3ca72](https://github.com/kdt310722/utils/commit/2e3ca72))
+- Add formatUsdCurrency ([8742cfb](https://github.com/kdt310722/utils/commit/8742cfb))
+
+### 🏡 Chore
+
+- Update deps ([abc9b5c](https://github.com/kdt310722/utils/commit/abc9b5c))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.12
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.11...v0.0.12)
