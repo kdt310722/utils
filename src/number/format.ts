@@ -35,3 +35,7 @@ export function format(number: Numberish, options: FormatOptions = {}) {
 export function humanizeNumber(value: Numberish, options: FormatOptions = {}) {
     return format(value, { locales: ['en-US'], notation: 'compact', compactDisplay: 'short', minimumFractionDigits: 2, maximumFractionDigits: 2, ...options })
 }
+
+export function formatUsdCurrency(input: Numberish, options: FormatOptions = {}) {
+    return format(input, { style: 'currency', locales: ['en-US'], currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2, ...options })
+}
