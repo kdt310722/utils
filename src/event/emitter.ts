@@ -8,6 +8,15 @@ export class Emitter<TEvents extends Events, Strict extends boolean = false, TEv
         return this.addListener(name, listener)
     }
 
+    public once<N extends keyof TEventsList>(name: N, listener: TEventsList[N]) {
+        const onceListener = (...args: any) => {
+            this.removeListener(name, onceListener as any);
+            (listener as any)(...args)
+        }
+
+        return this.addListener(name, onceListener as any)
+    }
+
     public addListener<N extends keyof TEventsList>(name: N, listener: TEventsList[N]) {
         this.events[name] ??= []
         this.events[name]?.push(listener)
