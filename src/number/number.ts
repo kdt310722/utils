@@ -11,6 +11,14 @@ export function isNumberish(input: unknown): input is Numberish {
     return isNumber(input) || isBigInt(input) || (isString(input) && isNumberString(input))
 }
 
+export function isValidRange(start: number, end: number, inclusive = true, min = Number.NEGATIVE_INFINITY, max = Number.POSITIVE_INFINITY) {
+    if (start > end || start < min || end > max) {
+        return false
+    }
+
+    return inclusive ? start <= end : start < end
+}
+
 export function toBigInt(input: unknown) {
     return BigInt(String(input))
 }
