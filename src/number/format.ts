@@ -18,7 +18,7 @@ export function format(number: Numberish, options: FormatOptions = {}) {
     const formatter = new Intl.NumberFormat(options.locales, { ...options, maximumFractionDigits })
 
     if (leadingZerosCount > maximumFractionLeadingZeros) {
-        const formatted = formatter.formatToParts(number as number).map((part) => {
+        const formatted = formatter.formatToParts(number).map((part) => {
             if (part.type === 'fraction') {
                 part.value = `0{${leadingZerosCount}}${part.value.slice(Math.max(0, leadingZerosCount))}`
             }
@@ -29,7 +29,7 @@ export function format(number: Numberish, options: FormatOptions = {}) {
         return formatted.join('')
     }
 
-    return formatter.format(number as number)
+    return formatter.format(number)
 }
 
 export function humanizeNumber(value: Numberish, options: FormatOptions = {}) {

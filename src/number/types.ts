@@ -1,4 +1,4 @@
-export type Numberish = string | number | bigint
+export type Numberish = `${number}` | 'Infinity' | '-Infinity' | '+Infinity' | number | bigint
 
 export interface FormatOptions extends Intl.NumberFormatOptions {
     locales?: string | string[]
