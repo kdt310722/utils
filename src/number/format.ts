@@ -1,8 +1,28 @@
-import type { FormatOptions, Numberish } from './types'
+import { rtrim } from '../string'
+import type { FormatOptions, NumberString, Numberish } from './types'
+
+export function convertExponentialToString(num: Numberish) {
+    const str = num.toString()
+
+    if (!str.includes('e')) {
+        return str as NumberString
+    }
+
+    if (!str.includes('e-')) {
+        return BigInt(num).toString() as NumberString
+    }
+
+    const [base, exp] = str.split('e-').map(Number)
+    const precision = base.toString().replace('.', '').length + exp
+
+    return rtrim(Number.parseFloat(str).toFixed(precision), '0') as NumberString
+}
 
 export function format(number: Numberish, options: FormatOptions = {}) {
     let leadingZerosCount = 0
     let { maximumFractionDigits = 4, groupFractionLeadingZeros = false } = options
+
+    number = convertExponentialToString(number)
 
     const { exactFractionWhenZero = true, maximumFractionLeadingZeros = maximumFractionDigits } = options
     const [integerPart, fractionPart = '0'] = String(number).split('.')
