@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.14
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.13...v0.0.14)
+
+### 🚀 Enhancements
+
+- Add isValidRange ([561209a](https://github.com/kdt310722/utils/commit/561209a))
+- **number:** Support E number when format ([a189cec](https://github.com/kdt310722/utils/commit/a189cec))
+- **number:** Check for number string ([697c0e2](https://github.com/kdt310722/utils/commit/697c0e2))
+
+### 💅 Refactors
+
+- Change Numberish type ([34f36b8](https://github.com/kdt310722/utils/commit/34f36b8))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.13
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.12...v0.0.13)
