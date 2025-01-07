@@ -24,6 +24,10 @@ export function format(number: Numberish, options: FormatOptions = {}) {
 
     number = convertExponentialToString(number)
 
+    if (number === 'Infinity' || number === '-Infinity' || number === '+Infinity' || number === 'NaN') {
+        return number
+    }
+
     const { exactFractionWhenZero = true, maximumFractionLeadingZeros = maximumFractionDigits } = options
     const [integerPart, fractionPart = '0'] = String(number).split('.')
 
