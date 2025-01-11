@@ -25,3 +25,5 @@ export type ExcludeNullish<O> = ExcludeNull<ExcludeUndefined<O>>
 export type Mutable<T> = {
     -readonly [P in keyof T]: T[P];
 }
+
+export type ClassMethod<T> = { [K in keyof T]: T[K] extends Fn ? K : never }[keyof T]
