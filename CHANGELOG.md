@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.15
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.14...v0.0.15)
+
+### 🚀 Enhancements
+
+- **common:** Add ClassMethod utility type ([2707b7a](https://github.com/kdt310722/utils/commit/2707b7a))
+- **promise:** Add create deferred options ([c3d3577](https://github.com/kdt310722/utils/commit/c3d3577))
+
+### 🏡 Chore
+
+- Update deps ([b42e2de](https://github.com/kdt310722/utils/commit/b42e2de))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.14
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.13...v0.0.14)
