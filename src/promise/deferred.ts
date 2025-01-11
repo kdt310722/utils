@@ -1,6 +1,12 @@
 import type { DeferredPromise } from './types'
 
-export function createDeferred<T>() {
+export interface CreateDeferredOptions {
+    onResolve?: (value: any) => void
+    onReject?: (reason: any) => void
+    onSettle?: () => void
+}
+
+export function createDeferred<T>({ onResolve, onReject, onSettle }: CreateDeferredOptions = {}) {
     let resolveFn: any, rejectFn: any
 
     const promise = <DeferredPromise<T>> new Promise<T>((resolve, reject) => {
@@ -11,13 +17,17 @@ export function createDeferred<T>() {
     promise.isSettled = false
 
     promise.resolve = (value) => {
-        resolveFn(value)
+        onResolve?.(value)
+        onSettle?.()
         promise.isSettled = true
+        resolveFn(value)
     }
 
     promise.reject = (reason) => {
-        rejectFn(reason)
+        onReject?.(reason)
+        onSettle?.()
         promise.isSettled = true
+        rejectFn(reason)
     }
 
     return promise
