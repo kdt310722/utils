@@ -15,6 +15,6 @@ export interface DeferredPromise<T> extends Promise<T> {
     isSettled: boolean
 }
 
-export type RetryOptions = Options & {
+export type RetryOptions = Exclude<Options, number[]> & {
     delay?: number
 }
