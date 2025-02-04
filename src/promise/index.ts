@@ -1,3 +1,4 @@
+export * from './abortable'
 export * from './deferred'
 export * from './lock'
 export * from './poll'
