@@ -63,3 +63,11 @@ export function humanizeNumber(value: Numberish, options: FormatOptions = {}) {
 export function formatUsdCurrency(input: Numberish, options: FormatOptions = {}) {
     return format(input, { style: 'currency', locales: ['en-US'], currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2, ...options })
 }
+
+export function formatBytes(bytes: number, options: FormatOptions = {}) {
+    return `${format(bytes / 1024 / 1024, { minimumFractionDigits: 2, maximumFractionDigits: 2, ...options })}MB`
+}
+
+export function formatPercent(value: number, options: FormatOptions = {}) {
+    return `${format(value, { minimumFractionDigits: 0, maximumFractionDigits: 2, ...options })}%`
+}
