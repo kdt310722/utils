@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.16
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.15...v0.0.16)
+
+### 🚀 Enhancements
+
+- **function:** Add "pipe" helper ([21667d1](https://github.com/kdt310722/utils/commit/21667d1))
+- **promise:** Add "safeRace" util ([16a4d8c](https://github.com/kdt310722/utils/commit/16a4d8c))
+- **promise:** Add "abortable" util ([51d3391](https://github.com/kdt310722/utils/commit/51d3391))
+- **number:** Add "minMax" ([608e97d](https://github.com/kdt310722/utils/commit/608e97d))
+- **node:** Add "fetch" util ([8c3d299](https://github.com/kdt310722/utils/commit/8c3d299))
+- **number:** Add some formatters ([db33bee](https://github.com/kdt310722/utils/commit/db33bee))
+
+### 🩹 Fixes
+
+- **promise:** Retry options ([844b199](https://github.com/kdt310722/utils/commit/844b199))
+
+### 🏡 Chore
+
+- Update deps ([14be3ef](https://github.com/kdt310722/utils/commit/14be3ef))
+- Update deps ([ae03770](https://github.com/kdt310722/utils/commit/ae03770))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.15
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.14...v0.0.15)
