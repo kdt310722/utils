@@ -1,4 +1,5 @@
 export * from './env'
+export * from './fetch'
 export * from './fs'
 export * from './path'
 export * from './process'
