@@ -1,4 +1,5 @@
 import { isString } from '../string'
+import { BigIntMath } from './bigint'
 import type { Numberish } from './types'
 
 export const isNumber = (value: unknown): value is number => typeof value === 'number'
@@ -29,4 +30,12 @@ export function toNumber(input: unknown) {
 
 export function random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+export function minMax(input: number, min: number, max: number) {
+    return Math.max(min, Math.min(max, input))
+}
+
+export function minMaxBigInt(input: bigint, min: bigint, max: bigint) {
+    return BigIntMath.max(min, BigIntMath.min(max, input))
 }
