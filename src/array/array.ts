@@ -1,4 +1,5 @@
 import type { Nullable } from '../common'
+import { createDeferred } from '../promise'
 import { push } from './elements'
 import type { Arrayable } from './types'
 
@@ -50,4 +51,20 @@ export function diff<T>(a: T[], b: T[]) {
 
 export function symmetricDiff<T>(a: T[], b: T[]) {
     return [...diff(a, b), ...diff(b, a)]
+}
+
+export async function mapAsync<T, R>(array: T[], fn: (value: T, index: number, array: T[]) => Promise<R>) {
+    return Promise.all(array.map(fn))
+}
+
+export async function findAsync<T>(array: T[], predicate: (value: T) => Promise<boolean>) {
+    const result = createDeferred<T | undefined>()
+
+    Promise.all(array.map(async (value) => predicate(value).then((isMatch) => isMatch && result.resolve(value)))).finally(() => {
+        if (!result.isSettled) {
+            result.resolve(void 0)
+        }
+    })
+
+    return result
 }
