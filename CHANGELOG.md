@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.17
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.16...v0.0.17)
+
+### 🚀 Enhancements
+
+- **array:** Add some array utils ([931285f](https://github.com/kdt310722/utils/commit/931285f))
+- **promise:** Add some promise utils ([778adb2](https://github.com/kdt310722/utils/commit/778adb2))
+
+### 💅 Refactors
+
+- Move formatDate to time module ([ba65dee](https://github.com/kdt310722/utils/commit/ba65dee))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.16
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.15...v0.0.16)
