@@ -1,10 +1,13 @@
 export * from './abortable'
 export * from './deferred'
 export * from './lock'
+export * from './pipe'
 export * from './poll'
 export * from './race'
 export * from './retry'
 export * from './sleep'
+export * from './tap'
 export * from './timeout'
+export * from './waterfall'
 
 export type * from './types'
