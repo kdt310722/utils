@@ -1,0 +1,7 @@
+# Augment Workspace Guidelines
+
+# This file defines workspace-level guidelines for Augment's Agent and Chat.
+# It references the central Copilot instructions to ensure consistency across tools.
+
+- Refer to the Copilot instructions for detailed coding standards and practices:
+  - [.github/copilot-instructions.md](.github/copilot-instructions.md)
