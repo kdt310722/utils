@@ -1,0 +1,5 @@
+onlyBuiltDependencies:
+    - '@kdt310722/eslint-config'
+    - '@swc/core'
+    - esbuild
+    - simple-git-hooks
