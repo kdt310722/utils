@@ -1,5 +1,6 @@
 export * from './abortable'
 export * from './deferred'
+export * from './deferred-with-timeout'
 export * from './lock'
 export * from './pipe'
 export * from './poll'

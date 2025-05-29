@@ -123,6 +123,9 @@ The project follows a modular structure where each utility category has its own 
 - Extract complex inline objects to variables for readability
 - For async functions returning single awaited expression, return directly
 - Omit `await` in direct returns if not needed for error handling
+- **Function signatures should be on single lines when possible** for better readability
+- Use concise forms for simple conditional logic (e.g., logical OR operator for simple conditions)
+- Prefer single-line implementations for simple timeout/conditional logic
 
 ### Variable Rules
 
@@ -130,6 +133,8 @@ The project follows a modular structure where each utility category has its own 
 - Use PascalCase for classes and components
 - Use UPPERCASE_SNAKE_CASE for global constants
 - Keep function parameters on same line when reasonable
+- Group variable declarations by type (`let` vs `const`) with blank lines between groups
+- Apply grouping only to single-line declarations (multi-line declarations remain separate)
 
 ## Naming Conventions
 
