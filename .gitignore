@@ -1,59 +1,227 @@
+# =============================================================================
+# Operating System Files
+# =============================================================================
+
 # macOS
 ._*
 .DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.fseventsd
 
 # Linux
 *~
 .directory
 .fuse_hidden*
 .nfs*
+.Trash-*
 
 # Windows
 [Dd]esktop.ini
 Thumbs.db*
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
 
-# Package managers
+# =============================================================================
+# Package Managers
+# =============================================================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# PNPM (keep pnpm-lock.yaml as it's the primary package manager)
+.pnpm-debug.log*
+.pnpm-store/
+
+# NPM (not used but may be present)
+package-lock.json
+.npm/
+.npmrc
+
+# Yarn (not used but may be present)
+yarn.lock
+.yarn/
+.yarnrc.yml
+.pnp.*
+
+# Package archives
 *.tgz
-.npm
-.yarn
-node_modules
+*.tar.gz
 
-# TypeScript
+# =============================================================================
+# TypeScript & Build Outputs
+# =============================================================================
+
+# TypeScript build info
 *.tsbuildinfo
+*.tsbuildinfo.*
 
-# IDE and editor files
-.idea
-.vscode
+# Compiled output directories
+dist/
+build/
+lib/
+out/
+.output/
 
-# Compiled output
-.next
-.nuxt
-build
-dist
-lib
-out
+# TypeScript declaration maps
+*.d.ts.map
 
-# Logs
-*.log*
-logs
+# tsup specific outputs (our bundler)
+*.js.map
+*.cjs.map
+*.mjs.map
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+# Legacy build outputs (not used but common)
+.next/
+.nuxt/
+.vuepress/dist/
 
-# Testing
+# =============================================================================
+# Development Tools & IDEs
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# Testing & Coverage
+# =============================================================================
+
+# Vitest coverage reports
+coverage/
+coverage-ts/
+.nyc_output/
+
+# Test results and reports
+test-results/
+junit.xml
 *.lcov
-coverage
-coverage-ts
-test-results
 
-# Environment variables
-!.env.example
-!example.env
-*.env*
+# Vitest cache
+.vitest/
+
+# Jest (not used but common)
+jest.config.js.bak
+
+# =============================================================================
+# Linting & Code Quality
+# =============================================================================
 
 # ESLint
 .eslintcache
 
+# Prettier (if used)
+.prettierignore.bak
+
+# =============================================================================
+# Environment & Configuration
+# =============================================================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Keep example files
+!.env.example
+!example.env
+!.env.template
+
+# Local configuration overrides
+config.local.*
+*.local.json
+
+# =============================================================================
+# Logs & Temporary Files
+# =============================================================================
+
+# Log files
+*.log
+*.log.*
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (Node.js)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Temporary directories
+tmp/
+temp/
+.tmp/
+.temp/
+
+# =============================================================================
 # Miscellaneous
+# =============================================================================
+
+# Backup files
 *.bak
-*.swp
+*.backup
+*.old
+*.orig
+
+# Archive files (unless intentional)
+*.zip
+*.tar
+*.rar
+*.7z
+
+# OS generated files
+.DS_Store?
+Icon?
+
+# Changelogen cache (used for changelog generation)
+.changelogen/
+
+# Simple git hooks cache
+.simple-git-hooks/
