@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.18
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.17...v0.0.18)
+
+### 🚀 Enhancements
+
+- Enhance deferred promise functionality and add comprehensive tests ([124c637](https://github.com/kdt310722/utils/commit/124c637))
+- Add createDeferredWithTimeout function and corresponding tests ([359dc66](https://github.com/kdt310722/utils/commit/359dc66))
+- Error utils ([e4e7351](https://github.com/kdt310722/utils/commit/e4e7351))
+
+### 🏡 Chore
+
+- Update deps ([bd0c8b0](https://github.com/kdt310722/utils/commit/bd0c8b0))
+- Add instructions for some AI coding assistant tools ([519ace6](https://github.com/kdt310722/utils/commit/519ace6))
+- Update .gitignore ([c329e8d](https://github.com/kdt310722/utils/commit/c329e8d))
+
+### ❤️ Contributors
+
+- DiepPk <kdt310722@gmail.com>
+
 ## v0.0.17
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.16...v0.0.17)
