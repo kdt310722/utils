@@ -9,12 +9,6 @@ export interface PromiseLock {
     isWaiting: () => boolean
 }
 
-export interface DeferredPromise<T> extends Promise<T> {
-    resolve: (value: T | PromiseLike<T>) => void
-    reject: (reason?: any) => void
-    isSettled: boolean
-}
-
 export type RetryOptions = Exclude<Options, number[]> & {
     delay?: number
 }

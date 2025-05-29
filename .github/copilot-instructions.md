@@ -181,12 +181,22 @@ The project follows a modular structure where each utility category has its own 
 - Use `expect` and `test` from vitest
 - Run tests with `pnpm test` or `pnpm dev` for watch mode
 
+### Test Directory Structure
+
+- **Mirror source structure**: Test directory structure should mirror the `src` directory structure
+- **Function-based naming**: Test file names should use the actual function name in kebab-case + `.test.ts`
+- **Examples**:
+    - `src/promise/deferred.ts` → `test/promise/create-deferred.test.ts`
+    - `src/array/chunk.ts` → `test/array/chunk.test.ts`
+    - `src/string/trim.ts` → `test/string/trim-string.test.ts`
+
 ### Testing Patterns
 
-- Write unit tests for all utility functions
+- Write comprehensive unit tests for all utility functions
 - Test edge cases and error conditions
-- Use descriptive test names
-- Group related tests using `describe` blocks when needed
+- Use descriptive test names that explain the behavior being tested
+- Group related tests using `describe` blocks for better organization
+- Aim for 100% test coverage (statements, branches, functions, lines)
 
 ## Build and Development
 

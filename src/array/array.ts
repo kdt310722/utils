@@ -26,7 +26,7 @@ export function range(from: number, to: number, step = 1) {
 }
 
 export function flatten<T>(array?: Nullable<Arrayable<T | T[]>>) {
-    return toArray(array).flat(1) as T[]
+    return toArray(array).flat() as T[]
 }
 
 export function merge<T>(...arrays: Array<Nullable<Arrayable<T>>>) {
