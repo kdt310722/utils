@@ -1,6 +1,7 @@
 export * as arr from './array'
 export * as buffer from './buffer'
 export * as common from './common'
+export * as error from './error'
 export * as event from './event'
 export * as func from './function'
 export * as json from './json'

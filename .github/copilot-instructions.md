@@ -126,6 +126,8 @@ The project follows a modular structure where each utility category has its own 
 - **Function signatures should be on single lines when possible** for better readability
 - Use concise forms for simple conditional logic (e.g., logical OR operator for simple conditions)
 - Prefer single-line implementations for simple timeout/conditional logic
+- **Prefer single-line returns for simple method implementations** - When a method simply calls another function or returns a direct expression, use single-line returns without intermediate variables
+- **Use consistent parameter destructuring patterns** - When functions accept options objects, use destructuring with default values in the parameter signature (e.g., `{ option1 = default1, option2 = default2 } = {}`) for consistency across the codebase
 
 ### Variable Rules
 
@@ -202,6 +204,7 @@ The project follows a modular structure where each utility category has its own 
 - Use descriptive test names that explain the behavior being tested
 - Group related tests using `describe` blocks for better organization
 - Aim for 100% test coverage (statements, branches, functions, lines)
+- **Do not create test files for index.ts files that only re-export from other modules** - focus testing on actual implementation files
 
 ## Build and Development
 
@@ -234,6 +237,42 @@ The project follows a modular structure where each utility category has its own 
 - Use proper error types and messages
 - Handle edge cases gracefully
 - Validate input parameters when necessary
+
+## Implementation Guidelines
+
+### Scope Limitation Rule
+
+- **Only implement exactly what is requested in the task**
+- Do not create additional code, features, or functionality beyond the explicit requirements
+- If you think there might be related improvements or additions, ask the user first before implementing
+- Focus on the specific requirements and avoid scope creep
+- Stick to the minimal viable implementation that satisfies the request
+
+### Default Exclusions Rule
+
+By default, **skip the following unless explicitly requested**:
+
+- **Input validation and parameter checking** - Only add when specifically asked
+- **Documentation** - Comments, JSDoc, README updates, or inline documentation
+- **Unit tests and test files** - Only create when testing is specifically requested
+- **Demo files and usage examples** - Only provide when examples are explicitly needed
+- **Example implementations** - Only create when the user asks for examples
+
+**Important**: Only create these items when the user specifically asks for them in their request. This keeps implementations focused and prevents unnecessary work.
+
+### Code Documentation Rule
+
+- **Never generate comments in source code by default** - Code should be self-documenting through clear naming and structure
+- Only add comments when explicitly requested or when code behavior is genuinely non-obvious
+- Prefer refactoring unclear code over adding explanatory comments
+- Use meaningful variable and function names that eliminate the need for comments
+
+### Code Quality Checks Rule
+
+- **Never run automated checks unless explicitly requested** - Do not automatically run ESLint, TypeScript checks, tests, or other validation tools
+- Only execute `pnpm lint`, `pnpm typecheck`, `pnpm test`, or similar commands when the user specifically asks for them
+- Focus on implementing the requested changes without automatic validation unless verification is requested
+- Let the user decide when to run quality checks and validation
 
 ## Code Reuse Guidelines
 
