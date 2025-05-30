@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v0.0.19
+
+[compare changes](https://github.com/kdt310722/utils/compare/v0.0.18...v0.0.19)
+
+### 🚀 Enhancements
+
+- Implement abortable promise functionality with comprehensive tests ([95a67f3](https://github.com/kdt310722/utils/commit/95a67f3))
+
+### 💅 Refactors
+
+- Rename tap to pTap and update export ([8a3b212](https://github.com/kdt310722/utils/commit/8a3b212))
+
+### ❤️ Contributors
+
+- DiepPk <kdt310722@gmail.com>
+
 ## v0.0.18
 
 [compare changes](https://github.com/kdt310722/utils/compare/v0.0.17...v0.0.18)
