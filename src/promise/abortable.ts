@@ -1,26 +1,34 @@
-import { safeRace } from './race'
+import { createAbortError } from '../error'
 
-export function abortable<T>(promise: Promise<T>, abortSignal?: AbortSignal): Promise<T> {
-    if (!abortSignal) {
+export async function abortable<T>(promise: Promise<T>, signal?: AbortSignal) {
+    if (!signal) {
         return promise
     }
 
-    return safeRace([
-        // This promise only ever rejects if the signal is aborted. Otherwise it idles forever.
-        // It's important that this come before the input promise; in the event of an abort, we
-        // want to throw even if the input promise's result is ready
-        // eslint-disable-next-line promise/param-names
-        new Promise<never>((_, reject) => {
-            if (abortSignal.aborted) {
-                // eslint-disable-next-line ts/prefer-promise-reject-errors
-                reject(abortSignal.reason)
-            } else {
-                abortSignal.addEventListener('abort', function () {
-                    // eslint-disable-next-line ts/prefer-promise-reject-errors
-                    reject(this.reason)
-                })
+    if (signal.aborted) {
+        throw signal.reason ?? createAbortError()
+    }
+
+    return new Promise<T>((resolve, reject) => {
+        let isSettled = false
+        let onAbort: () => void
+
+        const cleanup = (afterCleanup?: () => void) => {
+            if (!isSettled) {
+                isSettled = true
+                signal.removeEventListener('abort', onAbort)
+                afterCleanup?.()
             }
-        }),
-        promise,
-    ])
+        }
+
+        onAbort = () => {
+            cleanup(() => reject(signal.reason ?? createAbortError()))
+        }
+
+        signal.addEventListener('abort', onAbort)
+
+        promise.then((value) => cleanup(() => resolve(value))).catch((error) => {
+            cleanup(() => reject(error))
+        })
+    })
 }
