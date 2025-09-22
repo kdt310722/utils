@@ -2,7 +2,7 @@
     "name": "@kdt310722/utils",
     "type": "module",
     "version": "0.0.19",
-    "packageManager": "pnpm@10.17.0",
+    "packageManager": "pnpm@10.17.1",
     "description": "A collection of utility functions for JavaScript / TypeScript application",
     "author": "Diep Dang <kdt310722@gmail.com>",
     "license": "MIT",
