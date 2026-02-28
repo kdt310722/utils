@@ -54,7 +54,7 @@
     "dependencies": {
         "json5": "^2.2.3",
         "p-retry": "^6.2.1",
-        "serialize-error": "^12.0.0"
+        "serialize-error": "^13.0.1"
     },
     "devDependencies": {
         "@commitlint/cli": "^20.4.2",
