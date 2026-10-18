@@ -57,8 +57,8 @@
         "serialize-error": "^12.0.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^21.2.3",
-        "@commitlint/config-conventional": "^21.2.3",
+        "@commitlint/cli": "^21.2.4",
+        "@commitlint/config-conventional": "^21.2.4",
         "@kdt310722/eslint-config": "^0.2.0",
         "@kdt310722/tsconfig": "^1.0.0",
         "@swc/core": "^1.16.18",
@@ -66,7 +66,7 @@
         "@vitest/coverage-v8": "^4.1.12",
         "changelogen": "^0.6.2",
         "eslint": "^9.39.5",
-        "execa": "^10.1.1",
+        "execa": "^10.2.0",
         "fast-glob": "^3.3.3",
         "lint-staged": "^17.6.0",
         "npm-check-updates": "^23.1.1",
